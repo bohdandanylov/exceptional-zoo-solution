@@ -1,24 +1,24 @@
 package model;
 
+import exceptions.NotHungry;
+
 public class Animal {
 
     private boolean isHungry = true;
-    private boolean isAllergic = false;
+    private boolean hungry;
     private int eaten = 0;
 
-    public Animal (boolean hungry, boolean allergic) {
-        isHungry = hungry;
-        isAllergic = allergic;
-    }
-
-    public int eat() {
-        System.out.println("Animal not hungry!");
+    public int eat() throws NotHungry {
+        if(!isHungry){
+            throw new NotHungry();
+        }
+        System.out.println("Animal is eating!");
         isHungry = false;
         eaten++;
         return eaten;
     }
 
     public boolean isHungry() {
-        return isHungry;
+        return hungry;
     }
 }
