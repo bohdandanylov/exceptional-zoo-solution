@@ -27,5 +27,9 @@ public class Zoo {
             System.out.println("Reduce costs!");;
         }
 
+        finally{
+            System.out.println("...profits");
+        }
+
     }
 }
