@@ -1,4 +1,4 @@
 package exceptions;
 
-public class AllergyException extends Exception{
+public class AllergyException extends DidntEat{
 }
