@@ -9,6 +9,11 @@ public class Animal {
     private boolean isAllergic = false;
     private int eaten = 0;
 
+    public Animal (boolean hungry, boolean allergic){
+        isHungry = hungry;
+        isAllergic = allergic;
+    }
+
     public int eat() throws NotHungry, AllergyException {
         if(!isHungry){
             System.out.println("Animal not hungry!");
