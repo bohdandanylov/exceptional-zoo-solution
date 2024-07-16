@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.AllergyException;
 import exceptions.BrokeException;
 import exceptions.NotHungry;
 
@@ -20,8 +21,10 @@ public class Manager {
         try {
             keeper.feed();
         } catch (NotHungry notHungry) {
-            System.out.println("FEED LESS OFTEN!");
+            System.out.println("Caught notHungry: FEED LESS OFTEN!");
             throw new BrokeException();
+        } catch (AllergyException e) {
+            System.out.println("Caught Allergy: Get the doctor!");
         } finally {
             System.out.println("Finally Manager says: Regardless of what happens");
         }
